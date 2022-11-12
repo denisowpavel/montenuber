@@ -72,3 +72,8 @@
     }
   }
 }
+::ng-deep{
+  .t-dialog .t-content{
+    padding: 0!important;
+  }
+}
