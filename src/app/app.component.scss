@@ -1,0 +1,28 @@
+:host {
+  & header {
+    color: var(--tui-base-01);
+    background-color: var(--tui-base-08);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    & > div {
+      display: flex;
+      align-items: center;
+      & > * {
+        margin: 0 5px;
+      }
+    }
+  }
+
+  .announcement {
+    margin: 15px 0;
+    &-data {
+      width: 100%;
+    }
+  }
+}

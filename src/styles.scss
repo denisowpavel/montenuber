@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+$screenWidth: 400;
+$paddingVal: 10;
+
+html {
+  & body {
+    .t-root-content {
+      & > header,
+      & > section {
+        min-width: 350px;
+        padding: #{$paddingVal}px calc( calc(50vw - #{$screenWidth/2}px)); // width always 400px
+        @media screen and (max-width: #{$screenWidth + (2 * $paddingVal)}px){
+          padding: #{$paddingVal}px;
+        }
+      }
+    }
+  }
+}
