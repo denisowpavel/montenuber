@@ -4,6 +4,7 @@ import { ICar } from '@interfaces/car';
 import { TuiDialogService } from '@taiga-ui/core';
 import { PolymorpheusComponent } from '@tinkoff/ng-polymorpheus';
 import { FilterComponent } from '@components/filter/filter.component';
+import { CarBookComponent } from '@components/car-book/car-book.component';
 
 @Component({
   selector: 'app-root',
@@ -36,5 +37,20 @@ export class AppComponent {
         console.log(data);
       },
     });
+  }
+
+  public showCarDialog(car: ICar): void {
+    this.dialogService
+      .open<ICar>(
+        new PolymorpheusComponent(CarBookComponent, this.injector),
+        {
+          data: car,
+        }
+      )
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+        },
+      });
   }
 }
