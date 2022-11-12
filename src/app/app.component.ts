@@ -12,8 +12,6 @@ import { FilterComponent } from '@components/filter/filter.component';
 })
 export class AppComponent {
   list: ICar[] = [];
-  index = 0;
-  pictureIndex = 0;
   private readonly filterDialog = this.dialogService.open<string>(
     new PolymorpheusComponent(FilterComponent, this.injector),
     {}

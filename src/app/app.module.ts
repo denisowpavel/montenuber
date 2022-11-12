@@ -20,9 +20,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LocationPipe } from './pipes/location.pipe';
 import { FilterComponent } from './components/filter/filter.component';
+import { CarViewComponent } from './components/car-view/car-view.component';
 
 @NgModule({
-  declarations: [AppComponent, LocationPipe, FilterComponent],
+  declarations: [AppComponent, LocationPipe, FilterComponent, CarViewComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

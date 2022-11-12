@@ -14,32 +14,7 @@
   </header>
   <section>
     <ng-container *ngFor="let item of list">
-      <a class="announcement" tuiAction>
-        <div class="announcement-carousel">
-          <tui-carousel
-            [draggable]="true"
-            [itemsCount]="1"
-            [(index)]="pictureIndex"
-          >
-            <ng-container *ngFor="let pic of item.Pictures; let i = index">
-              <img *tuiItem alt="" draggable="false" [src]="pic" class="item" />
-            </ng-container>
-          </tui-carousel>
-          <tui-pagination
-            size="s"
-            class="pagination"
-            [length]="item.Pictures.length"
-            [(index)]="pictureIndex"
-          ></tui-pagination>
-        </div>
-        <section class="announcement-data">
-          <h3 class="header tui-text_body-s">{{ item.Model }}</h3>
-          <p class="description">{{ item.Type }}</p>
-          <p class="description tui-text_body-xs">
-            {{ item.Location | location }}
-          </p>
-        </section>
-      </a>
+      <app-car-view [car]="item"></app-car-view>
     </ng-container>
   </section>
 </tui-root>

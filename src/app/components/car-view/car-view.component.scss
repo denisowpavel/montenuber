@@ -1,0 +1,14 @@
+:host {
+  .announcement {
+    margin: 15px 0;
+    &-carousel {
+      max-width: 250px;
+      & tui-carousel{
+        margin-bottom: 4px;
+      }
+    }
+    &-data {
+      width: 100%;
+    }
+  }
+}

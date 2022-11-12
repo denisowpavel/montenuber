@@ -1,0 +1,22 @@
+<a class="announcement" tuiAction *ngIf="car">
+  <div class="announcement-carousel">
+    <tui-carousel [draggable]="true" [itemsCount]="1" [(index)]="pictureIndex">
+      <ng-container *ngFor="let pic of car.Pictures; let i = index">
+        <img *tuiItem alt="" draggable="false" [src]="pic" class="item" />
+      </ng-container>
+    </tui-carousel>
+    <tui-pagination
+      size="s"
+      class="pagination"
+      [length]="car.Pictures.length"
+      [(index)]="pictureIndex"
+    ></tui-pagination>
+  </div>
+  <section class="announcement-data">
+    <h3 class="header tui-text_body-s">{{ car.Model }}</h3>
+    <p class="description">{{ car.Type }}</p>
+    <p class="description tui-text_body-xs">
+      {{ car.Location | location }}
+    </p>
+  </section>
+</a>

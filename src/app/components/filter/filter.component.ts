@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FilterComponent implements OnInit {
-
+  pictureIndex = 0;
   constructor() { }
 
   ngOnInit(): void {
