@@ -1,8 +1,8 @@
 import {
   ChangeDetectionStrategy,
-  Component,
+  Component, EventEmitter,
   Input,
-  OnInit,
+  OnInit, Output,
 } from '@angular/core';
 import { ICar } from '@interfaces/car';
 
@@ -14,8 +14,13 @@ import { ICar } from '@interfaces/car';
 })
 export class CarViewComponent implements OnInit {
   @Input() car?: ICar;
+  @Output() book = new EventEmitter<ICar>();
   pictureIndex = 0;
   constructor() {}
 
   ngOnInit(): void {}
+
+  onBook():void{
+    this.book.emit(this.car);
+  }
 }

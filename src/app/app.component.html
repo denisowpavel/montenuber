@@ -61,7 +61,7 @@
       </div>
     </div>
     <ng-container *ngFor="let item of list">
-      <app-car-view [car]="item" (click)="showCarDialog(item)"></app-car-view>
+      <app-car-view [car]="item" (book)="showCarDialog(item)"></app-car-view>
     </ng-container>
   </section>
 </tui-root>
