@@ -2,13 +2,20 @@
   <header tuiMode="onDark" class="dark">
     <h1>MontenUber</h1>
     <div>
-      <button tuiButton size="s" icon="tuiIconFilter">Options</button>
+      <button
+        tuiButton
+        size="s"
+        (click)="showFilterDialog()"
+        icon="tuiIconFilter"
+      >
+        Options
+      </button>
     </div>
   </header>
   <section>
     <ng-container *ngFor="let item of list">
       <a class="announcement" tuiAction>
-        <img [src]="item.Pictures[0]">
+        <img [src]="item.Pictures[0]" />
         <section class="announcement-data">
           <h3 class="header tui-text_body-s">{{ item.Model }}</h3>
           <p class="description">{{ item.Type }}</p>

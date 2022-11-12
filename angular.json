@@ -5,9 +5,11 @@
   "projects": {
     "montenuber": {
       "projectType": "application",
-      "@schematics/angular:component": {
-        "style": "scss",
-        "changeDetection": "OnPush"
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "changeDetection": "OnPush"
+        }
       },
       "root": "",
       "sourceRoot": "src",

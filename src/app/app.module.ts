@@ -19,9 +19,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LocationPipe } from './pipes/location.pipe';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
-  declarations: [AppComponent, LocationPipe],
+  declarations: [AppComponent, LocationPipe, FilterComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
