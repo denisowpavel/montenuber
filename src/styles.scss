@@ -1,14 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
 $screenWidth: 500;
 $paddingVal: 10;
+:root {
+  --tui-primary: #ed0064;
+  --tui-primary-active: #c40355;
+  --tui-primary-hover: #c40355;
+  --tui-base-02: #f7f9fb;
+  --tui-font-text: "Lato", cursive;
+  --tui-link: #171717;
+  --tui-link-hover: #000;
+}
 
 html {
   & body {
+    font-family: "Lato";
     .t-root-content {
       & > header,
       & > section {
         min-width: 350px;
-        padding: #{$paddingVal}px calc( calc(50vw - #{$screenWidth/2}px)); // width always 400px
-        @media screen and (max-width: #{$screenWidth + (2 * $paddingVal)}px){
+        padding: #{$paddingVal}px calc(calc(50vw - #{$screenWidth/2}px)); // width always 400px
+        @media screen and (max-width: #{$screenWidth + (2 * $paddingVal)}px) {
           padding: #{$paddingVal}px;
         }
       }
