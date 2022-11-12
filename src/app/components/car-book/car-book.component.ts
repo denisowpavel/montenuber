@@ -24,6 +24,8 @@ export class CarBookComponent implements OnInit {
     tuiCardNumberValidator,
     tuiCardExpireValidator,
   ]);
+  pictureIndex = 0;
+
   constructor(
     @Inject(POLYMORPHEUS_CONTEXT)
     public readonly context: TuiDialogContext<number, ICar>

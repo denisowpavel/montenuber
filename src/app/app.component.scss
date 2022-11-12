@@ -61,9 +61,14 @@
       display: flex;
       justify-content: space-between;
 
-      & .btn{
+      & .btn {
         cursor: pointer;
       }
+    }
+    & .item {
+      background-color: var(--tui-base-01);
+      flex-direction: column;
+      margin: 15px 0;
     }
   }
 }

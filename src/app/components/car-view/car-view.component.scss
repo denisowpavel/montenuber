@@ -1,9 +1,4 @@
 :host {
-  & a {
-    background-color: var(--tui-base-01);
-    flex-direction: column;
-    margin: 15px 0;
-  }
   .announcement {
     display: flex;
     justify-content: space-between;
