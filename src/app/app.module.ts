@@ -6,10 +6,10 @@ import {
   TUI_SANITIZER,
   TuiModeModule,
   TuiButtonModule,
-  TuiSvgModule, TuiErrorModule,
+  TuiSvgModule, TuiErrorModule, TuiTextfieldControllerModule,
 } from '@taiga-ui/core';
 import {
-  TuiActionModule, TuiCarouselModule, TuiFieldErrorPipeModule,
+  TuiActionModule, TuiCarouselModule, TuiFieldErrorPipeModule, TuiInputDateRangeModule,
   TuiInputModule,
   TuiMarkerIconModule, TuiPaginationModule,
   TuiToggleModule,
@@ -46,6 +46,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     TuiInputCardGroupedModule,
     ReactiveFormsModule,
     TuiErrorModule,
+    TuiInputDateRangeModule,
+    TuiTextfieldControllerModule,
   ],
   providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
   bootstrap: [AppComponent],

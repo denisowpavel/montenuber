@@ -16,7 +16,6 @@
     {{ car.Location | location }}
   </div>
 
-
   <div class="carousel">
     <tui-carousel [draggable]="true" [itemsCount]="1" [(index)]="pictureIndex">
       <ng-container *ngFor="let pic of car.Pictures; let i = index">
@@ -31,7 +30,7 @@
     ></tui-pagination>
   </div>
 
-    <div class="price">
+  <div class="price">
     <svg
       width="13"
       height="12"
@@ -126,16 +125,47 @@
       {{ car.Location.Distance }} min away
     </div>
   </section>
+</div>
 
+<div class="date-range">
+  Rent date
+  <tui-input-date-range
+    [min]="minDate"
+    [tuiTextfieldCleaner]="true"
+    [formControl]="controlDate"
+  >
+  </tui-input-date-range>
 </div>
 
 <hr />
-<hr />
-<hr />
-<tui-input-card-grouped [formControl]="control"></tui-input-card-grouped>
+<div class="total">
+  <div>
+    <svg
+      width="18"
+      height="20"
+      viewBox="0 0 18 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 20V0L1.5 1.5L3 0L4.5 1.5L6 0L7.5 1.5L9 0L10.5 1.5L12 0L13.5 1.5L15 0L16.5 1.5L18 0V20L16.5 18.5L15 20L13.5 18.5L12 20L10.5 18.5L9 20L7.5 18.5L6 20L4.5 18.5L3 20L1.5 18.5L0 20ZM3 15H15V13H3V15ZM3 11H15V9H3V11ZM3 7H15V5H3V7Z"
+        fill="black"
+      />
+    </svg>
+    For payment
+  </div>
+  <div>{{ car.Price * days }} €</div>
+</div>
+
+<div>
+  <button tuiButton appearance="primary" (click)="onBook()">BOOK</button>
+</div>
+
+<tui-input-card-grouped [formControl]="controlCard"></tui-input-card-grouped>
 <tui-error
-  [formControl]="control"
+  [formControl]="controlCard"
   [error]="[] | tuiFieldError | async"
 ></tui-error>
 
+{{ days }}
 {{ cardValid }}

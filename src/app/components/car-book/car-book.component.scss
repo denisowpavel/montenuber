@@ -45,4 +45,12 @@
       margin-right: 6px;
     }
   }
+  & .date-range{
+    margin-top: 10px;
+  }
+  & .total{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--tui-base-02);
+  }
 }
