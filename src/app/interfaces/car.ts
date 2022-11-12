@@ -4,16 +4,18 @@ import { IInsurance } from '@interfaces/insurance';
 
 export interface ICar {
   Id?: string;
+  Price: number;
   Model: string;
   Year: number;
   AC: boolean;
   Kids: boolean;
+  Pets: boolean;
   Color: string;
   Pictures: string[];
   PictureIndex: string[];
   Type: CarType;
   Location: ILocation;
-  Price: number;
+
   Gearbox?: Gearbox;
   Created?: Date;
   Marked?: Date;
