@@ -8,6 +8,8 @@ export interface ICar {
   Model: string;
   Fuel: string;
   Year: number;
+  Seats: number
+  ChildrenBooster: number
   AC: boolean;
   Kids: boolean;
   Pets: boolean;

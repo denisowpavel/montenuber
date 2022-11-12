@@ -5,4 +5,5 @@ export interface ILocation {
   Area?: string;
   Latitude: number;
   Longitude: number;
+  Distance: number;
 }

@@ -36,7 +36,7 @@
       ></tui-pagination>
     </div>
     <section class="data">
-      <div>
+      <div >
         <svg
           width="12"
           height="14"
@@ -49,9 +49,9 @@
             fill="black"
           />
         </svg>
-        4 seats
+        {{car.Seats}} seats
       </div>
-      <div>
+      <div *ngIf="car.Kids">
         <svg
           width="12"
           height="13"
@@ -66,7 +66,7 @@
         </svg>
         1 children booster
       </div>
-      <div>
+      <div *ngIf="car.Pets">
         <svg
           width="14"
           height="14"
@@ -82,7 +82,7 @@
 
         pets friendly
       </div>
-      <div>
+      <div *ngIf="car.Fuel === 'Hybrid'">
         <svg
           width="13"
           height="13"
@@ -111,14 +111,12 @@
           />
         </svg>
 
-        15 min away
-      </div>
+        {{ car.Location.Distance }} min away
 
-      <!--      <h3 class="header tui-text_body-s"></h3>-->
-      <!--      <p class="description">{{ car.Type }}</p>-->
-      <!--      <p class="description tui-text_body-xs">-->
-      <!--        {{ car.Location | location }}-->
-      <!--      </p>-->
+      </div>
+      <div class="no-icon">
+        {{ car.Location | location }}
+      </div>
     </section>
   </div>
   <div class="announcement">
