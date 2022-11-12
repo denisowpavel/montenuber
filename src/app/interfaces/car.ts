@@ -10,6 +10,7 @@ export interface ICar {
   Kids: boolean;
   Color: string;
   Pictures: string[];
+  PictureIndex: string[];
   Type: CarType;
   Location: ILocation;
   Price: number;

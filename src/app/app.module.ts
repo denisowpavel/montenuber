@@ -9,9 +9,9 @@ import {
   TuiSvgModule,
 } from '@taiga-ui/core';
 import {
-  TuiActionModule,
+  TuiActionModule, TuiCarouselModule,
   TuiInputModule,
-  TuiMarkerIconModule,
+  TuiMarkerIconModule, TuiPaginationModule,
   TuiToggleModule,
 } from '@taiga-ui/kit';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,6 +36,8 @@ import { FilterComponent } from './components/filter/filter.component';
     TuiToggleModule,
     TuiMarkerIconModule,
     TuiSvgModule,
+    TuiCarouselModule,
+    TuiPaginationModule,
   ],
   providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
   bootstrap: [AppComponent],
