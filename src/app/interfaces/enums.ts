@@ -6,6 +6,7 @@ export enum CarType {
   Sedan,
   SUV,
   Cabriolet,
-  Van
+  Van,
+  Hatchback,
+  Coupe
 }
-
