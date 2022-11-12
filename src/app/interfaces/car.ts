@@ -6,6 +6,7 @@ export interface ICar {
   Id?: string;
   Price: number;
   Model: string;
+  Fuel: string;
   Year: number;
   AC: boolean;
   Kids: boolean;
