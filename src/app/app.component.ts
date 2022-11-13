@@ -43,7 +43,8 @@ export class AppComponent {
             car.Price > filter.priceRange[0] &&
             car.Price < filter.priceRange[1] &&
             car.Location.Distance > filter.distanceRange[0] &&
-            car.Location.Distance < filter.distanceRange[1]
+            car.Location.Distance < filter.distanceRange[1] &&
+            (!filter.electro || car.Fuel === 'Hybrid' || car.Fuel === 'Electro')
           );
         });
       },

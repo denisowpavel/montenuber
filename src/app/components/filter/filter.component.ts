@@ -17,6 +17,7 @@ import { POLYMORPHEUS_CONTEXT } from '@tinkoff/ng-polymorpheus';
 })
 export class FilterComponent implements OnInit {
   filterForm = new FormGroup({
+    electro: new FormControl(false),
     priceRange: new FormControl([25, 50]),
     distanceRange: new FormControl([10, 3000]),
   });
@@ -30,6 +31,9 @@ export class FilterComponent implements OnInit {
   }
   get distanceRange() {
     return this.filterForm.controls.distanceRange as FormControl;
+  }
+  get electro() {
+    return this.filterForm.controls.electro as FormControl;
   }
   ngOnInit(): void {}
 

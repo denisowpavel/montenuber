@@ -9,9 +9,16 @@ import {
   TuiSvgModule, TuiErrorModule, TuiTextfieldControllerModule, TuiLoaderModule,
 } from '@taiga-ui/core';
 import {
-  TuiActionModule, TuiCarouselModule, TuiFieldErrorPipeModule, TuiInputDateRangeModule,
-  TuiInputModule, TuiInputRangeModule,
-  TuiMarkerIconModule, TuiPaginationModule,
+  TuiActionModule,
+  TuiCarouselModule,
+  TuiCheckboxLabeledModule,
+  TuiCheckboxModule,
+  TuiFieldErrorPipeModule,
+  TuiInputDateRangeModule,
+  TuiInputModule,
+  TuiInputRangeModule,
+  TuiMarkerIconModule,
+  TuiPaginationModule,
   TuiToggleModule,
 } from '@taiga-ui/kit';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -51,6 +58,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     TuiMoneyModule,
     TuiLoaderModule,
     TuiInputRangeModule,
+    TuiCheckboxModule,
+    TuiCheckboxLabeledModule,
   ],
   providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
   bootstrap: [AppComponent],
