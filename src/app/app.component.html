@@ -1,5 +1,8 @@
 <tui-root>
-  <header tuiMode="onDark" class="dark">CaRenta</header>
+  <header tuiMode="onDark" class="dark">
+    CARENTA
+    <div class="slogan">CHEAP. CAR. NEARBY. </div>
+  </header>
 
   <section class="settings">
     <h2>Rent a car easily!</h2>
@@ -60,9 +63,13 @@
         Budva
       </div>
     </div>
-    <div *ngIf="filteredList.length === 0" class="no-result" (click)="showFilterDialog()">
+    <div
+      *ngIf="filteredList.length === 0"
+      class="no-result"
+      (click)="showFilterDialog()"
+    >
       Sorry, No result, try to change filter
-            <svg
+      <svg
         width="20"
         height="18"
         viewBox="0 0 20 18"

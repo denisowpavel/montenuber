@@ -10,11 +10,14 @@
     font-weight: 700;
     line-height: 31px;
 
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
 
-    display: flex;
-    justify-content: space-between;
+
+    & .slogan{
+      margin-top: -12px;
+      font-size: 12px;
+    }
     & > div {
       display: flex;
       align-items: center;
