@@ -66,7 +66,7 @@ export class AnnouncementService {
         Location: {
           Country: 'Montenegro',
           City: 'Budva',
-          Distance: 15,
+          Distance: 3,
           Latitude: 42.2858721,
           Longitude: 18.8431396,
         },
@@ -85,15 +85,15 @@ export class AnnouncementService {
         Kids: true,
         Color: 'Black',
         Pictures: [
-          'https://s3-eu-west-1.amazonaws.com/localrent.images/images/files/000/021/438/original/razno_108_(Large).jpg?1594126642',
-          'https://s3-eu-west-1.amazonaws.com/localrent.images/images/files/000/021/437/original/razno_111.jpg?1594126640',
+          'http://blog.videgro.net/wp-content/uploads/2014/09/volkswagen_passat_b7_1.jpg',
+          'https://www.chrome-auto.eu/wp-content/uploads/2017/10/vw-volkswagen-passat-b7-sedan-10-15-listwa-chrom-chromowana-3m-ochronna-na-klape-bagaznika-2.jpg',
         ],
         Gearbox: Gearbox.manual,
         Insurance: {} as IInsurance,
         Location: {
           Country: 'Montenegro',
           City: 'Kotor',
-          Distance: 290,
+          Distance: 123,
           Latitude: 42.2858721,
           Longitude: 18.8431396,
         },
@@ -120,7 +120,7 @@ export class AnnouncementService {
         Location: {
           Country: 'Montenegro',
           City: 'Podgorica',
-          Distance: 134,
+          Distance: 2,
           Latitude: 42.2858721,
           Longitude: 18.8431396,
         },
@@ -224,7 +224,7 @@ export class AnnouncementService {
         Location: {
           Country: 'Serbian',
           City: 'Beograd',
-          Distance: 345,
+          Distance: 290,
           Latitude: 42.2858721,
           Longitude: 18.8431396,
         },
@@ -251,7 +251,7 @@ export class AnnouncementService {
         Location: {
           Country: 'Serbian',
           City: 'Beograd',
-          Distance: 340,
+          Distance: 290,
           Latitude: 42.2858721,
           Longitude: 18.8431396,
         },
@@ -269,9 +269,8 @@ export class AnnouncementService {
         Kids: true,
         Color: 'Black',
         Pictures: [
-          'https://s3-eu-west-1.amazonaws.com/localrent.images/images/files/000/022/688/original/IMG-20200903-WA0008.jpg?1599224208',
-          'https://s3-eu-west-1.amazonaws.com/localrent.images/images/files/000/022/687/original/IMG-20200903-WA0025.jpg?1599224208',
-          'https://s3-eu-west-1.amazonaws.com/localrent.images/images/files/000/022/686/original/IMG-20200903-WA0016.jpg?1599224207',
+          'https://www.terraecar.com/files/terrae-car-peugeot-308-2.jpg',
+          'https://image1.mobiauto.com.br/images/api/images/v1.0/176177118/transform/fl_progressive,f_webp,w_300',
         ],
         Gearbox: Gearbox.manual,
         Insurance: {} as IInsurance,
@@ -414,7 +413,7 @@ export class AnnouncementService {
         Location: {
           Country: 'Montenegro',
           City: 'Zablac',
-          Distance: 450,
+          Distance: 300,
           Latitude: 42.2858721,
           Longitude: 18.8431396,
         },
@@ -441,7 +440,7 @@ export class AnnouncementService {
         Location: {
           Country: 'Montenegro',
           City: 'Podgorica',
-          Distance: 450,
+          Distance: 80,
           Latitude: 42.2858721,
           Longitude: 18.8431396,
         },
@@ -468,7 +467,7 @@ export class AnnouncementService {
         Location: {
           Country: 'Montenegro',
           City: 'Niksic',
-          Distance: 450,
+          Distance: 356,
           Latitude: 42.2858721,
           Longitude: 18.8431396,
         },
@@ -495,7 +494,7 @@ export class AnnouncementService {
         Location: {
           Country: 'Montenegro',
           City: 'Kolashin',
-          Distance: 450,
+          Distance: 300,
           Latitude: 42.2858721,
           Longitude: 18.8431396,
         },
@@ -522,7 +521,7 @@ export class AnnouncementService {
         Location: {
           Country: 'Montenegro',
           City: 'Kolashin',
-          Distance: 450,
+          Distance: 300,
           Latitude: 42.2858721,
           Longitude: 18.8431396,
         },
