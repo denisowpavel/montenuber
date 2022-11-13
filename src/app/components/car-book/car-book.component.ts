@@ -5,7 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { POLYMORPHEUS_CONTEXT } from '@tinkoff/ng-polymorpheus';
-import { TuiDialogContext } from '@taiga-ui/core';
+import { TuiDialogContext, TuiDialogService } from '@taiga-ui/core';
 import { ICar } from '@interfaces/car';
 import { FormControl } from '@angular/forms';
 import {
@@ -13,6 +13,7 @@ import {
   tuiCardNumberValidator,
 } from '@taiga-ui/addon-commerce';
 import { TuiDay, TuiDayRange } from '@taiga-ui/cdk';
+import { PolymorpheusContent } from '@tinkoff/ng-polymorpheus';
 
 @Component({
   selector: 'app-car-book',
@@ -34,7 +35,8 @@ export class CarBookComponent implements OnInit {
   );
   constructor(
     @Inject(POLYMORPHEUS_CONTEXT)
-    public readonly context: TuiDialogContext<number, ICar>
+    public readonly context: TuiDialogContext<number, ICar>,
+    @Inject(TuiDialogService) private readonly dialogService: TuiDialogService
   ) {}
 
   ngOnInit(): void {}
@@ -86,5 +88,8 @@ export class CarBookComponent implements OnInit {
   }
   onBook(): void {
     this.showPayment = true;
+  }
+  onPayment(content: PolymorpheusContent<TuiDialogContext>): void {
+    this.dialogService.open(content).subscribe();
   }
 }

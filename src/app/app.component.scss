@@ -72,8 +72,11 @@
     }
   }
 }
-::ng-deep{
-  .t-dialog .t-content{
-    padding: 0!important;
+::ng-deep {
+  .t-dialog .t-content {
+    padding: 0 !important;
+  }
+  .t-dialog .date-range .t-content {
+    padding: 1rem !important;
   }
 }

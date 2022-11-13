@@ -1,3 +1,6 @@
+  .dialog-content {
+    padding: 2rem;
+  }
 :host {
   .dialog-content {
     padding: 2rem;
@@ -86,4 +89,11 @@
     cursor: pointer;
   }
 }
-//
+
+.confirm-dialog{
+  display: flex;
+  justify-content: space-around;
+}
+::ng-deep .t-item:before{
+    border-radius: 10px !important;
+}

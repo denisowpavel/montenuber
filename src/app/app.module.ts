@@ -6,7 +6,7 @@ import {
   TUI_SANITIZER,
   TuiModeModule,
   TuiButtonModule,
-  TuiSvgModule, TuiErrorModule, TuiTextfieldControllerModule,
+  TuiSvgModule, TuiErrorModule, TuiTextfieldControllerModule, TuiLoaderModule,
 } from '@taiga-ui/core';
 import {
   TuiActionModule, TuiCarouselModule, TuiFieldErrorPipeModule, TuiInputDateRangeModule,
@@ -22,7 +22,7 @@ import { LocationPipe } from './pipes/location.pipe';
 import { FilterComponent } from './components/filter/filter.component';
 import { CarViewComponent } from './components/car-view/car-view.component';
 import { CarBookComponent } from './components/car-book/car-book.component';
-import {TuiInputCardGroupedModule} from "@taiga-ui/addon-commerce";
+import {TuiInputCardGroupedModule, TuiMoneyModule} from "@taiga-ui/addon-commerce";
 import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
@@ -48,6 +48,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     TuiErrorModule,
     TuiInputDateRangeModule,
     TuiTextfieldControllerModule,
+    TuiMoneyModule,
+    TuiLoaderModule,
   ],
   providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
   bootstrap: [AppComponent],

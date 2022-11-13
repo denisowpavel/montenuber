@@ -133,12 +133,13 @@
   </div>
 
   <div class="date-range">
-    Rent date
+    Rent dates
     <tui-input-date-range
       [min]="minDate"
       [tuiTextfieldCleaner]="true"
       [formControl]="controlDate"
     >
+      Choose rental period
     </tui-input-date-range>
   </div>
 </div>
@@ -162,7 +163,7 @@
     <div>{{ car.Price * days }} €</div>
   </div>
 
-  <div class="main-action">
+  <div class="main-action" *ngIf="!showPayment">
     <button size="xl" tuiButton appearance="primary" (click)="onBook()">
       BOOK
     </button>
@@ -170,8 +171,13 @@
       After payment you will have 15 minutes to open car or we return money
     </div>
   </div>
-  <div class="card-data">
+
+  <div class="card-data" *ngIf="showPayment">
+    <br />
+    Please Enter a Credit Card
+    <br />
     <tui-input-card-grouped
+      size="xl"
       [formControl]="controlCard"
     ></tui-input-card-grouped>
     <tui-error
@@ -179,18 +185,113 @@
       [error]="[] | tuiFieldError | async"
     ></tui-error>
   </div>
-  <div class="main-action">
+  <div class="main-action" *ngIf="showPayment">
     <button
       size="xl"
       tuiButton
       appearance="primary"
-      (click)="onBook()"
+      (click)="onPayment(loader)"
       [disabled]="!cardValid"
     >
       BOOK
     </button>
     <div>
-      Don’t want to pay now? <span class="link"> SIGN UP </span>
+      Don’t want to pay now?
+      <span class="link" (click)="onPayment(loader)"> SIGN UP </span>
     </div>
   </div>
 </div>
+
+<ng-template #loader let-observer>
+  <div class="dialog-content">
+    <div>
+      <h1>Rental Contract</h1>
+      <div>
+        <h3>Insurance</h3>
+        The Renter hereby warrants to Owner that Renter possess car insurance
+        that covers personal injury to Renter or other persons as well as the
+        Vehicle and the property of others.
+        <h3>Indemnity</h3>
+        Regardless of insurance coverage, Renter shall fully indemnify the Owner
+        for any loss, damage, and legal actions, including reasonable attorneys
+        fees that Owner suffers due to Renter’s use of Vehicle during the term
+        of this Agreement, including but not limited to, damage to the Vehicle,
+        damage to the property of others, injury to Renter, and injury to
+        others. This provision survives the termination of this Agreement.
+        <h3>Owner Warranty</h3>
+        The Owner represents that to the best of his knowledge and belief that
+        the Vehicle is in sound and safe condition and free of any known faults
+        or defects that would affect its safe operation under normal use.
+        <h3>Renter Warranties</h3>
+        The Renter agrees that Renter will not (a) use the Vehicle to carry any
+        passengers other than Renter; (b) allow any other person to operate the
+        Vehicle; (c) operate the Vehicle in violation of any laws or for an
+        illegal purpose and that if Renter does, Renter is responsible for all
+        associated, tickets, fines, and fees; (d) use the Vehicle to push or tow
+        another vehicle; (e) use the Vehicle for any race or competition; (f)
+        operate the vehicle in a negligent manner.
+        <h3>Arbitration</h3>
+        In the event that the Parties cannot amicably resolve a dispute or
+        damage claim resulting from this Agreement, the Parties agree to resolve
+        any such dispute or damage claim by arbitration. The arbitration
+        proceeding shall be conducted in [City], [State], in accordance with the
+        rules of the American Arbitration Association then in effect with one
+        (1) arbitrator to be selected by mutual agreement of the Parties. If the
+        Parties cannot agree on an arbitrator, then the American Arbitration
+        Association shall select an arbitrator from the National Panel of
+        Arbitrators. The laws of the State of [State] in the United States shall
+        apply to the arbitration proceedings. The Parties agree that the
+        arbitrator cannot award punitive damages to either Party and agree to be
+        bound by the arbitrator’s findings. Judgment upon the award rendered by
+        the arbitrator may be entered in any court having jurisdiction.
+        <h3>Disputes and Governing Law.</h3>
+        The laws of the State of [State] in the United States without regard to
+        any conflict of law principles govern this Agreement. No action, arising
+        out of the transactions under this Agreement may be brought by either
+        Party more than one year after the cause of action has accrued.
+        <h3>General</h3>
+        This Agreement, including all Exhibit(s), constitutes the entire
+        agreement between the Parties in connection with the subject matter
+        hereof and supersedes all agreements, proposals, representations and
+        other understandings, oral or written, of the Parties and any current or
+        subsequent purchase order(s) provided by Affiliate. No alteration or
+        modification of this Agreement or any Exhibits shall be valid unless
+        made in writing and signed by an authorized Affiliate of each Party. The
+        waiver by either Party of a breach of any provision of the Agreement
+        shall not operate or be construed as a waiver of any subsequent breach
+        and any waiver must be in writing and signed by an authorized Affiliate
+        of the Parties hereto. If any provision of this Agreement is held to be
+        invalid or unenforceable, the remaining provisions shall continue in
+        full force and effect. Any notice or other communication required or
+        permitted hereunder shall be given in writing to the other Party at the
+        address stated above, or at such other address as shall be given by
+        either Party to the other in writing. Any terms of this Agreement which
+        by their nature extend beyond its termination remain in effect until
+        fulfilled, and apply to respective successors and rightful assignees.
+      </div>
+      <br />
+      <br />
+      <br />
+      <hr />
+      <h3>Wait, please</h3>
+      <p>Your personal data is processed</p>
+    </div>
+    <div class="confirm-dialog">
+      <div>
+        <button tuiButton type="button" size="m" (click)="observer.complete()">
+          Cancel
+        </button>
+      </div>
+      <div>
+        <tui-loader
+          class="inline-flex tui-space_right-2"
+          [showLoader]="true"
+          [inheritColor]="true"
+          [overlay]="true"
+        >
+          <button tuiButton type="button">Confirm</button>
+        </tui-loader>
+      </div>
+    </div>
+  </div>
+</ng-template>
