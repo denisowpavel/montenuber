@@ -1,1 +1,19 @@
-<p>filter works!</p>
+<div class="dialog-content">
+  <form [formGroup]="filterForm">
+    <div class="tui-form__row">
+      price range € /day
+      <tui-input-range
+        [min]="0"
+        [max]="500"
+        [formControl]="priceRange"
+        [tuiTextfieldSize]="'m'"
+        [tuiTextfieldLabelOutside]="true"
+      >
+      </tui-input-range>
+    </div>
+  </form>
+
+  <div class="tui-form__row main-action">
+    <button tuiButton (click)="onDone()">Done</button>
+  </div>
+</div>

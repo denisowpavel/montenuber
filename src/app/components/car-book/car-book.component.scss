@@ -1,6 +1,6 @@
-  .dialog-content {
-    padding: 2rem;
-  }
+.dialog-content {
+  padding: 2rem;
+}
 :host {
   .dialog-content {
     padding: 2rem;
@@ -90,10 +90,10 @@
   }
 }
 
-.confirm-dialog{
+.confirm-dialog {
   display: flex;
   justify-content: space-around;
 }
-::ng-deep .t-item:before{
-    border-radius: 10px !important;
+::ng-deep .t-item:before {
+  border-radius: 10px !important;
 }

@@ -87,6 +87,7 @@ export class CarBookComponent implements OnInit {
     return Math.floor((utc2 - utc1) / _MS_PER_DAY);
   }
   onBook(): void {
+   //this.context.completeWith( 0 );
     this.showPayment = true;
   }
   onPayment(content: PolymorpheusContent<TuiDialogContext>): void {

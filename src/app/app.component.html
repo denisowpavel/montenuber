@@ -60,7 +60,7 @@
         Budva
       </div>
     </div>
-    <ng-container *ngFor="let item of list">
+    <ng-container *ngFor="let item of filteredList">
       <a class="item" tuiAction>
         <app-car-view [car]="item" (book)="showCarDialog(item)"></app-car-view>
       </a>

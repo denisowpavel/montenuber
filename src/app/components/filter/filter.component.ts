@@ -1,16 +1,37 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Inject,
+  OnInit,
+} from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { IFilter } from '@interfaces/filter';
+import { TuiDialogContext, TuiDialogService } from '@taiga-ui/core';
+import { POLYMORPHEUS_CONTEXT } from '@tinkoff/ng-polymorpheus';
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilterComponent implements OnInit {
-  pictureIndex = 0;
-  constructor() { }
-
-  ngOnInit(): void {
+  filterForm = new FormGroup({
+    priceRange: new FormControl([25, 50]),
+  });
+  constructor(
+    @Inject(POLYMORPHEUS_CONTEXT)
+    public readonly context: TuiDialogContext<IFilter, number>,
+    @Inject(TuiDialogService) private readonly dialogService: TuiDialogService
+  ) {}
+  get priceRange() {
+    return this.filterForm.controls.priceRange as FormControl;
   }
+  ngOnInit(): void {}
 
+  onDone(): void {
+    console.log(this.filterForm.value);
+    console.log(this.context.data)
+   this.context.completeWith(this.filterForm.value as IFilter);
+  }
 }

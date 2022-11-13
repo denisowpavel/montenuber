@@ -10,7 +10,7 @@ import {
 } from '@taiga-ui/core';
 import {
   TuiActionModule, TuiCarouselModule, TuiFieldErrorPipeModule, TuiInputDateRangeModule,
-  TuiInputModule,
+  TuiInputModule, TuiInputRangeModule,
   TuiMarkerIconModule, TuiPaginationModule,
   TuiToggleModule,
 } from '@taiga-ui/kit';
@@ -50,6 +50,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     TuiTextfieldControllerModule,
     TuiMoneyModule,
     TuiLoaderModule,
+    TuiInputRangeModule,
   ],
   providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
   bootstrap: [AppComponent],

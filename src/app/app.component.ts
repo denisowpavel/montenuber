@@ -5,6 +5,7 @@ import { TuiDialogService } from '@taiga-ui/core';
 import { PolymorpheusComponent } from '@tinkoff/ng-polymorpheus';
 import { FilterComponent } from '@components/filter/filter.component';
 import { CarBookComponent } from '@components/car-book/car-book.component';
+import {IFilter} from "@interfaces/filter";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import { CarBookComponent } from '@components/car-book/car-book.component';
 })
 export class AppComponent {
   list: ICar[] = [];
-  private readonly filterDialog = this.dialogService.open<string>(
+  filteredList: ICar[] = [];
+  private readonly filterDialog = this.dialogService.open<IFilter>(
     new PolymorpheusComponent(FilterComponent, this.injector),
     {}
   );
@@ -29,24 +31,25 @@ export class AppComponent {
   private loadList(): void {
     this.announcementService.list().subscribe((list) => {
       this.list = list;
+      this.filteredList = this.list ;
     });
   }
   public showFilterDialog(): void {
     this.filterDialog.subscribe({
-      next: (data) => {
-        console.log(data);
+      next: (filter) => {
+        this.filteredList = this.list.filter( (car)=> {
+          return car.Price > filter.priceRange[0] && car.Price < filter.priceRange[1]
+        }) ;
+
       },
     });
   }
 
   public showCarDialog(car: ICar): void {
     this.dialogService
-      .open<ICar>(
-        new PolymorpheusComponent(CarBookComponent, this.injector),
-        {
-          data: car,
-        }
-      )
+      .open<ICar>(new PolymorpheusComponent(CarBookComponent, this.injector), {
+        data: car,
+      })
       .subscribe({
         next: (data) => {
           console.log(data);
