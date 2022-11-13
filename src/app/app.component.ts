@@ -5,7 +5,7 @@ import { TuiDialogService } from '@taiga-ui/core';
 import { PolymorpheusComponent } from '@tinkoff/ng-polymorpheus';
 import { FilterComponent } from '@components/filter/filter.component';
 import { CarBookComponent } from '@components/car-book/car-book.component';
-import {IFilter} from "@interfaces/filter";
+import { IFilter } from '@interfaces/filter';
 
 @Component({
   selector: 'app-root',
@@ -31,16 +31,21 @@ export class AppComponent {
   private loadList(): void {
     this.announcementService.list().subscribe((list) => {
       this.list = list;
-      this.filteredList = this.list ;
+      this.filteredList = this.list;
     });
   }
   public showFilterDialog(): void {
     this.filterDialog.subscribe({
       next: (filter) => {
-        this.filteredList = this.list.filter( (car)=> {
-          return car.Price > filter.priceRange[0] && car.Price < filter.priceRange[1]
-        }) ;
-
+        console.log(filter);
+        this.filteredList = this.list.filter((car) => {
+          return (
+            car.Price > filter.priceRange[0] &&
+            car.Price < filter.priceRange[1] &&
+            car.Location.Distance > filter.distanceRange[0] &&
+            car.Location.Distance < filter.distanceRange[1]
+          );
+        });
       },
     });
   }

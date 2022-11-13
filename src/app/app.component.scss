@@ -71,6 +71,18 @@
       margin: 15px 0;
     }
   }
+  .no-result {
+    cursor: pointer;
+    text-align: center;
+    padding: 2rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    & svg {
+      margin: 0 10px;
+    }
+  }
 }
 ::ng-deep {
   .t-dialog .t-content {

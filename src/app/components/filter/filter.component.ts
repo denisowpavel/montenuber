@@ -18,6 +18,7 @@ import { POLYMORPHEUS_CONTEXT } from '@tinkoff/ng-polymorpheus';
 export class FilterComponent implements OnInit {
   filterForm = new FormGroup({
     priceRange: new FormControl([25, 50]),
+    distanceRange: new FormControl([10, 3000]),
   });
   constructor(
     @Inject(POLYMORPHEUS_CONTEXT)
@@ -27,11 +28,14 @@ export class FilterComponent implements OnInit {
   get priceRange() {
     return this.filterForm.controls.priceRange as FormControl;
   }
+  get distanceRange() {
+    return this.filterForm.controls.distanceRange as FormControl;
+  }
   ngOnInit(): void {}
 
   onDone(): void {
     console.log(this.filterForm.value);
-    console.log(this.context.data)
-   this.context.completeWith(this.filterForm.value as IFilter);
+    console.log(this.context.data);
+    this.context.completeWith(this.filterForm.value as IFilter);
   }
 }

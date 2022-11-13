@@ -1,11 +1,22 @@
 <div class="dialog-content">
   <form [formGroup]="filterForm">
     <div class="tui-form__row">
-      price range € /day
+      price range ( € /day )
       <tui-input-range
         [min]="0"
         [max]="500"
         [formControl]="priceRange"
+        [tuiTextfieldSize]="'m'"
+        [tuiTextfieldLabelOutside]="true"
+      >
+      </tui-input-range>
+    </div>
+    <div class="tui-form__row">
+      distance (min away)
+      <tui-input-range
+        [min]="0"
+        [max]="5000"
+        [formControl]="distanceRange"
         [tuiTextfieldSize]="'m'"
         [tuiTextfieldLabelOutside]="true"
       >

@@ -7,7 +7,7 @@ $paddingVal: 10;
   --tui-primary-active: #c40355;
   --tui-primary-hover: #c40355;
   --tui-base-02: #f7f9fb;
-  --tui-font-text: "Lato", cursive;
+  --tui-font-text: "Lato", sans-serif;
   --tui-link: #171717;
   --tui-link-hover: #000;
   --tui-radius-m: 1.75rem;
@@ -17,7 +17,7 @@ $paddingVal: 10;
 
 html {
   & body {
-    font-family: "Lato";
+    font-family: "Lato", sans-serif;
     .t-root-content {
       & > header,
       & > section {
