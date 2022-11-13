@@ -24,16 +24,19 @@
     }
     & .carousel {
       max-width: 250px;
+      @media screen and (max-width: 400px) {
+        max-width: 180px;
+      }
       & tui-carousel {
         margin-bottom: 4px;
       }
     }
     & .data {
       width: 100%;
-      & svg{
+      & svg {
         margin-right: 6px;
       }
-      & .no-icon{
+      & .no-icon {
         margin-left: 23px;
       }
     }

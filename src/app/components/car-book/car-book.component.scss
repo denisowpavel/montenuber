@@ -60,6 +60,9 @@
     }
     & .card-data {
       padding: 0 30px;
+      @media screen and (max-width: 400px) {
+        padding: 0;
+      }
     }
   }
 }
